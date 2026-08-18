@@ -1,4 +1,5 @@
-import { createInertiaApp } from '@inertiajs/vue3'
+import { createInertiaApp } from '@inertiajs/vue3';
+import Layout from './Layouts/Layout.vue';
 
 createInertiaApp({
     pages: {
@@ -7,4 +8,5 @@ createInertiaApp({
         lazy: true,
         transform: (name, page) => name.replace('/', '-'),
     },
+    layout: () => Layout,
 })

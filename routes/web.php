@@ -14,4 +14,7 @@ Route::middleware(EnsureUserIsNotLogged::class)->group(function () {
 Route::middleware(EnsureUserIsLogged::class)->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::post('/start-work', [DashboardController::class, 'startWork']);
+    Route::post('/end-work', [DashboardController::class, 'endWork']);
 });
